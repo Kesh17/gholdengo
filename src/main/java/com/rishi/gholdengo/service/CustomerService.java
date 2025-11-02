@@ -1,5 +1,6 @@
 package com.rishi.gholdengo.service;
 
+import com.rishi.gholdengo.model.Account;
 import com.rishi.gholdengo.model.Customer;
 import com.rishi.gholdengo.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,9 @@ public class CustomerService {
 
    public void remove(Integer id){
        customerRepository.deleteById(id);
+   }
+
+   public Iterable<Account> getAccounts(Integer id){
+       return customerRepository.findByAllAccountsByCustomerId(id);
    }
 }

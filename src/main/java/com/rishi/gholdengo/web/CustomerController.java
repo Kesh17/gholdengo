@@ -1,12 +1,11 @@
 package com.rishi.gholdengo.web;
 
+import com.rishi.gholdengo.model.Account;
 import com.rishi.gholdengo.model.Customer;
 import com.rishi.gholdengo.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
-import java.util.Optional;
 
 @RestController
 public class CustomerController {
@@ -50,5 +49,10 @@ public class CustomerController {
         if(customer == null){throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found");
         }
         customerService.remove(id);
+    }
+
+    @GetMapping("/customers/{id}/accounts")
+    public Iterable<Account> getAccounts(@PathVariable Integer id){
+       return customerService.getAccounts(id);
     }
 }
