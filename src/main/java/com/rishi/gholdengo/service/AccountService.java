@@ -1,7 +1,6 @@
 package com.rishi.gholdengo.service;
 
 import com.rishi.gholdengo.model.Account;
-import com.rishi.gholdengo.model.Customer;
 import com.rishi.gholdengo.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 

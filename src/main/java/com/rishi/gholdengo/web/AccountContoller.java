@@ -1,7 +1,6 @@
 package com.rishi.gholdengo.web;
 
 import com.rishi.gholdengo.model.Account;
-import com.rishi.gholdengo.repository.AccountRepository;
 import com.rishi.gholdengo.service.AccountService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 @RestController
 public class AccountContoller {
 
-    private AccountService accountService;
+    private final AccountService accountService;
 
    public AccountContoller(AccountService accountService){
        this.accountService= accountService;
